@@ -14,8 +14,11 @@ let firebaseModule = (function () {
 
     firebase.initializeApp(config);
 
+    let database = firebase.database();
+
     return {
-        firebase
+        firebase,
+        database
     };
 } ());
 
