@@ -6,7 +6,7 @@ import 'jquery';
 
 let moviesDb = (function () {
     const API_KEY = '?api_key=f9709353dd332045c8dc95553fc63dd8';
-    const API_URL = 'http://api.themoviedb.org/3';
+    const API_URL = 'https://api.themoviedb.org/3';
     const LANGUAGE_US = '&language=en-US';
 
     function searchMoviesByTitle(movieTitle) {

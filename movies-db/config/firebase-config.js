@@ -1,24 +1,27 @@
-/* globals firebase */
-
 import { firebase } from 'firebase';
 
-let firebaseModule = (function () {
+const firebaseModule = (function () {
     // Initialize Firebase
-    let config = {
-        apiKey: "AIzaSyC8-EiY-FwmVEqJnEBvdQ0hP39QnWu6Tqc",
-        authDomain: "movie-db-backend.firebaseapp.com",
-        databaseURL: "https://movie-db-backend.firebaseio.com",
-        storageBucket: "movie-db-backend.appspot.com",
-        messagingSenderId: "815705004894"
+    const config = {
+        apiKey: "AIzaSyDOf5Nu3yzkfUBTpqwLsXhxOZiEdpyv6Mw",
+        authDomain: "movies-db-6fc0d.firebaseapp.com",
+        databaseURL: "https://movies-db-6fc0d.firebaseio.com",
+        storageBucket: "movies-db-6fc0d.appspot.com",
+        messagingSenderId: "863798788488"
     };
 
     firebase.initializeApp(config);
 
-    let database = firebase.database();
+    const database = firebase.database().ref();
+
+    const auth = firebase.auth();
+    // Returns promises
+    const signInWithEmailAndPassword = auth.signInWithEmailAndPassword;
+    const createUserWithEmailAndPassword = auth.createUserWithEmailAndPassword;
+    const onAuthStateChange = auth.onAuthStateChange;
 
     return {
-        firebase,
-        database
+        database, auth, signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChange
     };
 } ());
 
