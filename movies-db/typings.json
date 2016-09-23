@@ -1,7 +1,0 @@
-{
-  "name": "movie-base",
-  "dependencies": {},
-  "globalDependencies": {
-    "jquery": "registry:dt/jquery#1.10.0+20160908203239"
-  }
-}
