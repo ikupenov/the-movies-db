@@ -28,8 +28,11 @@ SystemJS.config({
         'template-handler': './../views/helpers/template-handler.js',
 
         'account-controller': './../controllers/account-controller.js',
+        'search-controller': './../controllers/search-controller.js',
+        'header-controller': './../controllers/header-controller.js',
 
-        'user-model': './../models/user-model.js'
+        'user-model': './../models/user-model.js',
+        'search-model': './../models/search-model.js'
     },
 });
 

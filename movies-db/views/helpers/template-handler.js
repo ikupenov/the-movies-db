@@ -31,7 +31,7 @@ let templateHandler = (function () {
 
     return {
         getTemplate, setTemplate
-    }
+    };
 } ());
 
 export default templateHandler;

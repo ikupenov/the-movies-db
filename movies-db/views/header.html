@@ -65,8 +65,10 @@
 
     <div class="search-wrapper">
         <div class="search-bar">
-            <span class="search-icon"><i class="fa fa-search" aria-hidden="true"></i></span>
-            <input type="text" class="search-input" placeholder="Search for a movie...">
+            <form action="#/movies/search/title" method="GET">
+                <span class="search-icon"><i class="fa fa-search" aria-hidden="true"></i></span>
+                <input name="search" type="text" class="search-input" placeholder="Search for a movie...">
+            </form>
         </div>
     </div>
 </div>
@@ -86,5 +88,3 @@
 <script src="../lib/scripts/bootstrap.min.js"></script>
 <script src="../lib/scripts/material.min.js"></script>
 <script src="../lib/scripts/material-kit.js"></script>
-
-</html>

@@ -4,7 +4,7 @@
 
 import 'jquery';
 
-let moviesDb = (function () {
+const moviesDb = (function () {
     const API_KEY = '?api_key=f9709353dd332045c8dc95553fc63dd8';
     const API_URL = 'https://api.themoviedb.org/3';
     const LANGUAGE_US = '&language=en-US';
@@ -37,16 +37,19 @@ let moviesDb = (function () {
         return new Promise((resolve, reject) => {
             $.getJSON(`${API_URL}/movie/${movieId}/videos${API_KEY}${LANGUAGE_US}`)
                 .done(resolve)
-                .fail(reject)
+                .fail(reject);
         });
     }
 
     return {
-        searchMoviesByTitle, getMovieDetails, getMovieImages, getMovieVideos
-    }
+        searchMoviesByTitle, 
+        getMovieDetails, 
+        getMovieImages, 
+        getMovieVideos
+    };
 } ());
 
-export { moviesDb }
+export default moviesDb;
 
 
 // Example

@@ -11,10 +11,16 @@ class AccountController {
     }
 
     loadLoginPage() {
+        let $warningContainer = $('.warning');
+        $warningContainer.addClass('hide');
+
         htmlHandler.setHtml('sign-in');
     }
 
     loadSignupPage() {
+        let $warningContainer = $('.warning');
+        $warningContainer.addClass('hide');
+
         htmlHandler.setHtml('sign-up');
     }
 
@@ -37,6 +43,17 @@ class AccountController {
                         resolve();
                     }, 1500);
                 });
+            }).catch(error => {
+                const code = error.code;
+                const message = error.message;
+
+                let $warningContainer = $('.warning');
+                $warningContainer.removeClass('hide');
+
+                let $dangerMessageContainer = $('#danger-message-container');
+                $dangerMessageContainer.html(message);
+
+                console.log(`${code} - ${message}`);
             });
     }
 
@@ -60,6 +77,17 @@ class AccountController {
                         resolve();
                     }, 750);
                 });
+            }).catch(error => {
+                const code = error.code;
+                const message = error.message;
+
+                let $warningContainer = $('.warning');
+                $warningContainer.removeClass('hide');
+
+                let $dangerMessageContainer = $('#danger-message-container');
+                $dangerMessageContainer.html(message);
+
+                console.log(`${code} - ${message}`);
             });
     }
 
@@ -76,9 +104,14 @@ class AccountController {
                         resolve();
                     }, 750);
                 });
+            }).catch(error => {
+                const code = error.code;
+                const message = error.message;
+
+                console.log(message);
             });
     }
 }
 
-const accountController = new AccountController;
+const accountController = new AccountController();
 export default accountController;
