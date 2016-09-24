@@ -14,7 +14,7 @@ svg {
   left: 50%;
   margin-top: -100px;
   margin-left: 50px;
-  color: #fff;
+  color: #343434;
   font-family: Roboto;
   font-weight: 300;
 }
@@ -84,4 +84,9 @@ svg {
     margin-left: -190px;
     text-align: center;
   }
+}
+
+#wrapper-404 {
+  height: 37.5em;
+  margin-bottom: 200px;
 }

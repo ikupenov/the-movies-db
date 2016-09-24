@@ -30,6 +30,10 @@ const engine = (function () {
             this.get('#/account/sign-out', accountController.signOut);
 
             this.get('#/movies/search/title', searchController.search);
+
+            this.get(/^((?!unlist).)*$/, () => {
+                htmlHandler.setHtml('404-page');
+            });
         });
         $(function () {
             sammy.run('#/');

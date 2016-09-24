@@ -79,7 +79,12 @@ body {
     }
 }
 
-#footer-push, #footer {
+#footer-push {
+    height: 3em;
+    clear: both;
+}
+
+#footer {
     height: 10.500em;
     clear: both;
 }
