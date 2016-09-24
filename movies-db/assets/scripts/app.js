@@ -2,6 +2,8 @@
 
 import 'jquery';
 import engine from 'engine';
+import loadingScreen from 'loading-screen';
+
 import htmlHandler from './../../views/helpers/html-handler.js';
 
 $(document).ready(function () {
@@ -11,11 +13,8 @@ $(document).ready(function () {
     htmlHandler.setHtml('header', '#header');
     htmlHandler.setHtml('footer', '#footer');
 
-    let $body = $('body');
-
     setTimeout(() => {
-        $body.removeClass('loading');
-        $body.addClass('loaded');
+        loadingScreen.stop();
     }, 1000);
 
     $(window).scroll(() => {

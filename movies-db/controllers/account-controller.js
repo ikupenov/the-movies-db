@@ -1,3 +1,7 @@
+/* globals Promise */
+
+import loadingScreen from 'loading-screen';
+
 import htmlHandler from 'html-handler';
 import userModel from 'user-model';
 
@@ -23,8 +27,16 @@ class AccountController {
 
         userModel
             .signIn(email, password)
-            .then(_ => {
-                sammy.redirect('#/')
+            .then(() => {
+                loadingScreen.start();
+            }).then(() => {
+                return new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                        sammy.redirect('#/');
+                        loadingScreen.stop();
+                        resolve();
+                    }, 1500);
+                });
             });
     }
 
@@ -38,16 +50,32 @@ class AccountController {
 
         userModel
             .signUp(email, password)
-            .then(_ => {
-                sammy.redirect('#/account/sign-in');
+            .then(() => {
+                loadingScreen.start();
+            }).then(() => {
+                return new Promise((resolve, _) => {
+                    setTimeout(() => {
+                        sammy.redirect('#/account/sign-in');
+                        loadingScreen.stop();
+                        resolve();
+                    }, 750);
+                });
             });
     }
 
     signOut(sammy) {
         userModel
             .signOut()
-            .then(_ => {
-                sammy.redirect('#/');
+            .then(() => {
+                loadingScreen.start();
+            }).then(() => {
+                return new Promise((resolve, _) => {
+                    setTimeout(() => {
+                        sammy.redirect('#/');
+                        loadingScreen.stop();
+                        resolve();
+                    }, 750);
+                });
             });
     }
 }

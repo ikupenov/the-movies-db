@@ -3,15 +3,20 @@
     padding: 0;
 }
 
+html, body, .container {
+    height: 100%;
+}
+
 body {
     background-image: url('../../assets/img/bg_pattern.jpg');
     background-repeat: repeat;
     background-color: #fff;
+    height: auto!important;
 }
 
 #header {
     position: relative;
-    height: 8em;
+    height: 9em;
     z-index: 9999;
 }
 
@@ -62,8 +67,19 @@ body {
 }
 
 #content {
-    min-height: 45em;
+    min-height: 52em;
     /*background: url('../../assets/img/content_bg.png');*/
     opacity: 0.95;
     border-radius: 5px;
+}
+
+@media (max-width: 600px) {
+    #content {
+        min-height: 0;
+    }
+}
+
+#footer-push, #footer {
+    height: 10.500em;
+    clear: both;
 }
