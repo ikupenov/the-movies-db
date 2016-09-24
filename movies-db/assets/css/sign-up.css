@@ -125,13 +125,10 @@
 	transition: 0.5s;
 }
 
-/* Animation Delay */
 .sign-in-container #logo {
   -webkit-animation-duration: 1s;
-  -webkit-animation-delay: 500ms;
 }
 
 .sign-in-container .login-box {
   -webkit-animation-duration: 1s;
-  -webkit-animation-delay: 500ms;
 }
