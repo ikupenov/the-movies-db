@@ -3,16 +3,32 @@
 SystemJS.config({
     transpiler: 'plugin-babel',
     map: {
-        'plugin-babel': './../lib/scripts/plugin-babel.js',
-        'systemjs-babel-build': './../lib/scripts/systemjs-babel-browser.js',
+        'plugin-babel': './../lib/scripts/systemjs-babel-plugin/plugin-babel.js',
+        'systemjs-babel-build': './../lib/scripts/systemjs-babel-plugin/systemjs-babel-browser.js',
 
         'main': './../assets/scripts/app.js',
-        'jquery': './../lib/scripts/jquery.min.js',
+        'engine': './../config/sammy-config.js',
 
-        'db-module': './../models/movies-db-module.js',
+        'sammy': './../lib/scripts/sammy.js',
+        'jquery': './../lib/scripts/jquery.min.js',
+        'handlebars': './../lib/scripts/handlebars.js',
+
+        'bootstrap': './../lib/scripts/bootstrap.min.js',
+        'material': './../lib/scripts/material.min.js',
+        'material-kit': './../lib/scripts/material-kit.js',
 
         'firebase': './../lib/scripts/firebase.js',
-        'firebase-module': './../config/firebase-config.js'
+        'firebase-config': './../config/firebase-config.js',
+
+        'movies-database': './../database/movies-database.js',
+        'firebase-database': './../database/firebase-database.js',
+
+        'html-handler': './../views/helpers/html-handler.js',
+        'template-handler': './../views/helpers/template-handler.js',
+
+        'account-controller': './../controllers/account-controller.js',
+
+        'user-model': './../models/user-model.js'
     },
 });
 

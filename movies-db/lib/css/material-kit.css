@@ -2191,7 +2191,7 @@ legend {
   background: url('../../assets/img/content_bg.png');
   /*background-color: #3C3C3C;*/
   /* #003264; */
-  opacity: 0.9;
+  opacity: 1;
   color: #ffffff;
 }
 .navbar.navbar-primary .navbar-form .form-group input.form-control::-moz-placeholder,
@@ -3122,6 +3122,7 @@ hr.on-light {
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
   -webkit-tap-highlight-color: transparent;
 }
+
 *:focus {
   outline: 0;
 }

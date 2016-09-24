@@ -71,3 +71,7 @@
     pointer-events: none;
     transform: scale(0);
 }
+
+-webkit-tap-highlight-color {
+    color: none;
+}

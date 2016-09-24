@@ -1,7 +1,6 @@
 import { firebase } from 'firebase';
 
 const firebaseModule = (function () {
-    // Initialize Firebase
     const config = {
         apiKey: "AIzaSyDOf5Nu3yzkfUBTpqwLsXhxOZiEdpyv6Mw",
         authDomain: "movies-db-6fc0d.firebaseapp.com",
@@ -13,16 +12,11 @@ const firebaseModule = (function () {
     firebase.initializeApp(config);
 
     const database = firebase.database().ref();
-
     const auth = firebase.auth();
-    // Returns promises
-    const signInWithEmailAndPassword = auth.signInWithEmailAndPassword;
-    const createUserWithEmailAndPassword = auth.createUserWithEmailAndPassword;
-    const onAuthStateChange = auth.onAuthStateChange;
 
     return {
-        database, auth, signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChange
-    };
+        database, auth
+    }
 } ());
 
-export { firebaseModule };
+export default firebaseModule;

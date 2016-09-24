@@ -62,8 +62,8 @@ body {
 }
 
 #content {
-    min-height: 62.500em;
-    background: url('../../assets/img/content_bg.png');
-    opacity: 0.9;
+    min-height: 45em;
+    /*background: url('../../assets/img/content_bg.png');*/
+    opacity: 0.95;
     border-radius: 5px;
 }

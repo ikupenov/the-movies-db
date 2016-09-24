@@ -11,6 +11,7 @@
   "dependencies": {
     "firebase": "^3.4.0",
     "live-server": "^1.1.0",
+    "sammy": "^0.7.6",
     "systemjs": "^0.19.38",
     "systemjs-plugin-babel": "0.0.15"
   }

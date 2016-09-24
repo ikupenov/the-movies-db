@@ -32,22 +32,24 @@
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="logged-in-nav hide">
+
+                    {{#if loggedIn}}
+                    <li class="logged-in-nav">
                         <a href="#/account/profile">
                             <i class="material-icons">account_circle</i> Profile
                         </a>
                     </li>
-                    <li class="logged-in-nav hide">
+                    <li class="logged-in-nav">
                         <a href="#/account/settings">
                             <i class="material-icons">settings</i> Settings
                         </a>
                     </li>
-                    <li class="logged-in-nav hide">
+                    <li class="logged-in-nav">
                         <a href="#/account/sign-out">
                             <i class="material-icons">power_settings_new</i> Sign Out
                         </a>
                     </li>
-
+                    {{else}}
                     <li class="logged-out-nav">
                         <a href="#/account/sign-in">
                             <i class="material-icons">exit_to_app</i> Sign In
@@ -58,6 +60,8 @@
                             <i class="material-icons">people</i> Sign Up
                         </a>
                     </li>
+                    {{/if}}
+
                 </ul>
             </div>
         </div>
@@ -75,16 +79,7 @@
 
 <script>
     var element = document.querySelector(".navbar-wrapper");
-    var headroom = new Headroom(element, {
-        "offset": 205,
-        "tolerance": 5,
-    });
+    var headroom = new Headroom(element, { "offset": 205, "tolerance": 5 });
 
     headroom.init(); 
 </script>
-
-<script src="../lib/scripts/bootstrap.min.js"></script>
-<script src="../lib/scripts/material.min.js"></script>
-<script src="../lib/scripts/material-kit.js"></script>
-
-</html>

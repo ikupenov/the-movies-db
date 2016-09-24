@@ -1,24 +1,15 @@
 /// <reference path="../../typings/index.d.ts" />
 
 import 'jquery';
-
-// Test
-import { moviesDb } from 'db-module';
-import { firebaseModule } from 'firebase-module';
-// ---
-
-// const database = firebaseModule.database;
-// let children = database.child('users');
-// children.push({"nqkuv": 5});
-
-// children.on('value', data => console.log(data.val()));
+import engine from 'engine';
+import htmlHandler from './../../views/helpers/html-handler.js';
 
 $(document).ready(function () {
-    $('#header').load('../../views/header.html', () => false);
+    engine.start();
 
-    // Test
-    $('#content').load('./views/404-page.html', () => false);
-    // ---
+    // TODO: Check if logged in
+    htmlHandler.setHtml('header', '#header');
+    htmlHandler.setHtml('footer', '#footer');
 
     let $body = $('body');
 
@@ -41,22 +32,3 @@ $(document).ready(function () {
         }, 500);
     });
 });
-
-// Example
-//-------------------------
-
-// moviesDb.searchMoviesByTitle('up')
-//     .then(movies => moviesDb.getMovieDetails(movies.results[0].id))
-//     .then(movieInfo => moviesDb.getMovieVideos(movieInfo.id))
-//     .then(movieVideo => {
-//         const VIDEO_KEY = movieVideo.results[0].key;
-
-//         let div = $('<div id="frame-wrapper"/>');
-//         div.css('text-align', 'center');
-
-//         let iFrame = $(`<iframe width="1300" height="720" src="https://www.youtube.com/embed/${VIDEO_KEY}?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>`);
-
-//         div.append(iFrame);
-
-//         $('body').prepend(div);
-//     });
