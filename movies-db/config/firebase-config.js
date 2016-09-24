@@ -16,7 +16,7 @@ const firebaseModule = (function () {
 
     return {
         database, auth
-    }
+    };
 } ());
 
 export default firebaseModule;
