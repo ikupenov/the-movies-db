@@ -41,11 +41,47 @@ const moviesDb = (function () {
         });
     }
 
+    function getPopularMovies(pageCount) {
+        return new Promise((resolve, reject) => {
+            $.getJSON(`${API_URL}/movie/popular${API_KEY}&page=${pageCount}`)
+                .done(resolve)
+                .fail(reject);
+        });
+    }
+
+    function getTopRatedMovies(pageCount) {
+        return new Promise((resolve, reject) => {
+            $.getJSON(`${API_URL}/movie/top_rated${API_KEY}&page=${pageCount}`)
+                .done(resolve)
+                .fail(reject);
+        });
+    }
+
+    function getUpcomingMovies(pageCount) {
+        return new Promise((resolve, reject) => {
+            $.getJSON(`${API_URL}/movie/upcoming${API_KEY}&page=${pageCount}`)
+                .done(resolve)
+                .fail(reject);
+        });
+    }
+
+    function getNowPlayingMovies(pageCount) {
+        return new Promise((resolve, reject) => {
+            $.getJSON(`${API_URL}/movie/now_playing${API_KEY}&page=${pageCount}`)
+                .done(resolve)
+                .fail(reject);
+        });
+    }
+
     return {
-        searchMoviesByTitle, 
-        getMovieDetails, 
-        getMovieImages, 
-        getMovieVideos
+        searchMoviesByTitle,
+        getMovieDetails,
+        getMovieImages,
+        getMovieVideos,
+        getPopularMovies,
+        getTopRatedMovies,
+        getUpcomingMovies,
+        getNowPlayingMovies
     };
 } ());
 

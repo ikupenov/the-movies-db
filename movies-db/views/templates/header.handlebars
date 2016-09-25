@@ -22,18 +22,17 @@
 												<b class="caret"></b>
 											<div class="ripple-container"></div></a>
                         <ul class="dropdown-menu dropdown-menu-right">
-                            <li><a href="#/popular">Popular</a></li>
-                            <li><a href="#/top-rated">Top Rated</a></li>
-                            <li><a href="#/upcoming">Upcoming</a></li>
-                            <li><a href="#/now-playing">Now Playing</a></li>
-                            <li><a href="#/genres">Browse by Genre</a></li>
+                            <li><a href="#/movies/now-playing">Now Playing</a></li>
+                            <li><a href="#/movies/top-rated">Top Rated</a></li>
+                            <li><a href="#/movies/popular">Popular</a></li>
+                            <li><a href="#/movies/upcoming">Upcoming</a></li>
                         </ul>
                     </li>
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right">
 
-                    {{#if loggedIn}}
+                    {{#if isLoggedIn}}
                     <li class="logged-in-nav">
                         <a href="#/account/profile">
                             <i class="material-icons">account_circle</i> Profile

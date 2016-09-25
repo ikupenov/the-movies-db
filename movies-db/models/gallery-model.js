@@ -3,10 +3,10 @@
 import moviesDb from 'movies-database';
 
 class GalleryModel {
-    getMovieInfoById(movieId) {
+    searchMoviesByTitle(movieTitle) {
         return new Promise((resolve, reject) => {
-            moviesDb.getMovieDetails(movieId)
-                .then(movieDetails => resolve(movieDetails))
+            moviesDb.searchMoviesByTitle(movieTitle)
+                .then(data => resolve(data.results))
                 .catch(error => reject(error));
         });
     }
@@ -20,15 +20,68 @@ class GalleryModel {
         });
     }
 
-    searchMoviesByTitle(movieTitle) {
+    getMovieInfoById(movieId) {
         return new Promise((resolve, reject) => {
-            moviesDb.searchMoviesByTitle(movieTitle)
-                .then(movies => resolve(movies))
+            moviesDb.getMovieDetails(movieId)
+                .then(movieDetails => resolve(movieDetails))
                 .catch(error => reject(error));
         });
     }
 
-    getImageUrl(imageSrc) {
+    getPopularMovies(pageCount) {
+        return new Promise((resolve, reject) => {
+            moviesDb.getPopularMovies(pageCount)
+                .then(data => resolve(data.results))
+                .catch(error => reject(error));
+        });
+    }
+
+    getTopRatedMovies(pageCount) {
+        return new Promise((resolve, reject) => {
+            moviesDb.getTopRatedMovies(pageCount)
+                .then(data => resolve(data.results))
+                .catch(error => reject(error));
+        });
+    }
+
+    getUpcomingMovies(pageCount) {
+        return new Promise((resolve, reject) => {
+            moviesDb.getUpcomingMovies(pageCount)
+                .then(data => resolve(data.results))
+                .catch(error => reject(error));
+        });
+    }
+
+    getNowPlayingMovies(pageCount) {
+        return new Promise((resolve, reject) => {
+            moviesDb.getNowPlayingMovies(pageCount)
+                .then(data => resolve(data.results))
+                .catch(error => reject(error));
+        });
+    }
+
+    getHandlebarsObject(movies) {
+        return new Promise((resolve, reject) => {
+            let handlebarsObject = { movies: [] };
+
+            movies.forEach(movie => {
+                let title = movie.original_title;
+                let id = movie.id;
+                let description = movie.overview;
+                let posterSrc = this._getImageUrl(movie.poster_path);
+
+                handlebarsObject.movies.push({ title, id, description, posterSrc });
+            });
+
+            if (!handlebarsObject.movies.length) {
+                reject("No results found.");
+            }
+
+            resolve(handlebarsObject);
+        });
+    }
+
+    _getImageUrl(imageSrc) {
         let imageUrl = imageSrc ? `http://image.tmdb.org/t/p/w500${imageSrc}` :
             'http://clipartix.com/wp-content/uploads/2016/08/Questions-powerpoint-question-mark-clip-art.jpg';
 

@@ -6,9 +6,9 @@ class HeaderController {
     updateHeader() {
         firebaseDb.onAuthStateChanged(user => {
             if (user) {
-                templateHandler.setTemplate('header', '#header', { loggedIn: true });
+                templateHandler.setTemplate('header', '#header', { isLoggedIn: true });
             } else {
-                templateHandler.setTemplate('header', '#header', { loggedIn: false });
+                templateHandler.setTemplate('header', '#header', { isLoggedIn: false });
             }
         });
     }

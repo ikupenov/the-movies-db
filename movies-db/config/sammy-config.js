@@ -30,9 +30,22 @@ const engine = (function () {
             this.post('#/account/sign-up', accountController.signUp);
             this.get('#/account/sign-out', accountController.signOut);
 
+            // Gallery navigator
             // this.get('#/movies/detailed/:id', galleryController.loadDetailedMoviePage);
             this.get('#/movies/search/title', galleryController.loadFoundMoviesPage);
 
+            this.get('#/movies/popular', galleryController.redirectToPopularMoviesPage);
+            this.get('#/movies/popular/:page', galleryController.loadPopularMoviesPage);
+
+            this.get('#/movies/top-rated', galleryController.redirectToTopRatedMoviesPage);
+            this.get('#/movies/top-rated/:page', galleryController.loadTopRatedMoviesPage);
+
+            this.get('#/movies/upcoming', galleryController.redirectToUpcomingMoviesPage);
+            this.get('#/movies/upcoming/:page', galleryController.loadUpcomingMoviesPage);
+
+            this.get('#/movies/now-playing', galleryController.redirectToNowPlayingMoviesPage);
+            this.get('#/movies/now-playing/:page', galleryController.loadNowPlayingMoviesPage);
+            
             // Rest
             this.get(/^((?!unlist).)*$/, () => {
                 htmlHandler.setHtml('404-page');
