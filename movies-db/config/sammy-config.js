@@ -30,9 +30,7 @@ const engine = (function () {
             this.post('#/account/sign-up', accountController.signUp);
             this.get('#/account/sign-out', accountController.signOut);
 
-            // this.get('#/movies/search/title', searchController.search);
-
-            this.get('#/movies/detailed/:id', galleryController.loadDetailedMoviePage);
+            // this.get('#/movies/detailed/:id', galleryController.loadDetailedMoviePage);
             this.get('#/movies/search/title', galleryController.loadFoundMoviesPage);
 
             // Rest
