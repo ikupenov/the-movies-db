@@ -82,7 +82,7 @@ class GalleryModel {
     }
 
     _getImageUrl(imageSrc) {
-        let imageUrl = imageSrc ? `http://image.tmdb.org/t/p/w500${imageSrc}` :
+        let imageUrl = imageSrc ? `https://image.tmdb.org/t/p/w500${imageSrc}` :
             'http://clipartix.com/wp-content/uploads/2016/08/Questions-powerpoint-question-mark-clip-art.jpg';
 
         return imageUrl;
