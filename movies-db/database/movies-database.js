@@ -33,7 +33,7 @@ const moviesDb = (function () {
         });
     }
 
-    function getMovieVideos(movieId) {
+    function getMovieTrailers(movieId) {
         return new Promise((resolve, reject) => {
             $.getJSON(`${API_URL}/movie/${movieId}/videos${API_KEY}${LANGUAGE_US}`)
                 .done(resolve)
@@ -77,7 +77,7 @@ const moviesDb = (function () {
         searchMoviesByTitle,
         getMovieDetails,
         getMovieImages,
-        getMovieVideos,
+        getMovieTrailers,
         getPopularMovies,
         getTopRatedMovies,
         getUpcomingMovies,

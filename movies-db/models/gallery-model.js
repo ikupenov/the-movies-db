@@ -60,7 +60,15 @@ class GalleryModel {
         });
     }
 
-    getHandlebarsObject(movies) {
+    getMovieTrailer(id) {
+        return new Promise((resolve, reject) => {
+            moviesDb.getMovieTrailers(id)
+                .then(data => resolve(data.results[0]))
+                .catch(error => reject(error));
+        });
+    }
+
+    getGalleryHandlebarsObject(movies) {
         return new Promise((resolve, reject) => {
             let handlebarsObject = { movies: [] };
 

@@ -1,0 +1,41 @@
+<link rel="stylesheet" href="./../../assets/css/movie-details.css">
+
+<div class="container">
+    <div id="movie-detailed-container">
+
+        <div class="top-container">
+            <div class="movie-header">
+                <div class="movie-title-container">
+                    <h1>{{title}}</h1>
+                    <big>{{year}}</big>
+                </div>
+
+                <div class="rating-container">
+                    <h2 style="display: inline-block">{{rating}}</h2>
+                    <small class="out-of">/10</small>
+                </div>
+            </div>
+
+            <div class="clear"></div>
+
+            <div class="trailer-container">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{key}}?rel=0&amp;controls=0&amp;showinfo=0"
+                        allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+
+        <div class="middle-container">
+            <div class="movie-description-container">
+                <p>{{description}}</p>
+            </div>
+        </div>
+
+        <div class="bottom-container">
+            <div class="similar-movies-container">
+
+            </div>
+        </div>
+    </div>
+</div>

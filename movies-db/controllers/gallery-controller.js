@@ -2,35 +2,28 @@ import galleryModel from 'gallery-model';
 import templateHandler from 'template-handler';
 
 class GalleryController {
-    // loadDetailedMoviePage(sammy) {
-    //     const id = sammy.params.id;
+    loadMovieDetailsPage(sammy) {
+        const id = sammy.params.id;
 
-    //     galleryModel.getMovieInfoByTitle(id)
-    //         .then(movieInfo => {
-    //             let title = movieInfo.original_title;
-    //             let id = movieInfo.id;
-    //             let description = movieInfo.overview;
-    //             let posterSrc = galleryModel.getImageUrl(movieInfo.poster_path);
+        galleryModel.getMovieInfoById(id)
+            .then(movieDetails => {
+                let title = movieDetails.original_title;
+                let description = movieDetails.overview;
+                let rating = movieDetails.vote_average;
+                let year = movieDetails.release_date.split('-')[0];
 
-    //             // TODO: Change handlerbars
-    //             let movie = {
-    //                 title: title,
-    //                 id: id,
-    //                 description: description,
-    //                 posterSrc: posterSrc
-    //             };
-
-    //             let handlebarsObject = {
-    //                 movies: [
-    //                     movie, movie, movie, movie
-    //                 ]
-    //             };
-
-    //             templateHandler.setTemplate('gallery', '#content', handlebarsObject);
-    //             // ---
-
-    //         }).catch(console.log);
-    // }
+                return { title, description, rating, year };
+            }).then(handlebarsObject => {
+                galleryModel.getMovieTrailer(id)
+                    .then(trailer => {
+                        let key = trailer ? trailer.key : 'X0k7N0ASfp8';
+                        handlebarsObject.key = key;
+                        return handlebarsObject;
+                    }).then(handlebarsObject => {
+                        templateHandler.setTemplate('movie-details', '#content', handlebarsObject);
+                    });
+            });
+    }
 
     redirectToPopularMoviesPage(sammy) {
         sammy.redirect('#/movies/popular/1');
@@ -52,7 +45,7 @@ class GalleryController {
         const searchTerm = sammy.params.search;
 
         galleryModel.searchMoviesByTitle(searchTerm)
-            .then(movies => galleryModel.getHandlebarsObject(movies))
+            .then(movies => galleryModel.getGalleryHandlebarsObject(movies))
             .then(handlebarsObject => {
                 templateHandler.setTemplate('gallery', '#content', handlebarsObject);
             }).catch(console.log);
@@ -62,7 +55,7 @@ class GalleryController {
         const pageCount = sammy.params.page;
 
         galleryModel.getPopularMovies(pageCount)
-            .then(movies => galleryModel.getHandlebarsObject(movies))
+            .then(movies => galleryModel.getGalleryHandlebarsObject(movies))
             .then(handlebarsObject => {
                 templateHandler.setTemplate('gallery', '#content', handlebarsObject);
             }).catch(console.log);
@@ -72,7 +65,7 @@ class GalleryController {
         const pageCount = sammy.params.page;
 
         galleryModel.getTopRatedMovies(pageCount)
-            .then(movies => galleryModel.getHandlebarsObject(movies))
+            .then(movies => galleryModel.getGalleryHandlebarsObject(movies))
             .then(handlebarsObject => {
                 templateHandler.setTemplate('gallery', '#content', handlebarsObject);
             }).catch(console.log);
@@ -82,7 +75,7 @@ class GalleryController {
         const pageCount = sammy.params.page;
 
         galleryModel.getUpcomingMovies(pageCount)
-            .then(movies => galleryModel.getHandlebarsObject(movies))
+            .then(movies => galleryModel.getGalleryHandlebarsObject(movies))
             .then(handlebarsObject => {
                 templateHandler.setTemplate('gallery', '#content', handlebarsObject);
             }).catch(console.log);
@@ -92,7 +85,7 @@ class GalleryController {
         const pageCount = sammy.params.page;
 
         galleryModel.getNowPlayingMovies(pageCount)
-            .then(movies => galleryModel.getHandlebarsObject(movies))
+            .then(movies => galleryModel.getGalleryHandlebarsObject(movies))
             .then(handlebarsObject => {
                 templateHandler.setTemplate('gallery', '#content', handlebarsObject);
             }).catch(console.log);

@@ -31,7 +31,7 @@ const engine = (function () {
             this.get('#/account/sign-out', accountController.signOut);
 
             // Gallery navigator
-            // this.get('#/movies/detailed/:id', galleryController.loadDetailedMoviePage);
+            this.get('#/movies/detailed/:id', galleryController.loadMovieDetailsPage);
             this.get('#/movies/search/title', galleryController.loadFoundMoviesPage);
 
             this.get('#/movies/popular', galleryController.redirectToPopularMoviesPage);
