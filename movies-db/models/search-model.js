@@ -7,7 +7,7 @@ class SearchModel {
         return new Promise((resolve, reject) => {
             // TODO: 
 
-            console.log(searchTerm);
+            // console.log(searchTerm);
         });
     }
 

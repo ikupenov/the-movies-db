@@ -30,9 +30,11 @@ SystemJS.config({
         'account-controller': './../controllers/account-controller.js',
         'search-controller': './../controllers/search-controller.js',
         'header-controller': './../controllers/header-controller.js',
+        'gallery-controller': './../controllers/gallery-controller.js',
 
         'user-model': './../models/user-model.js',
-        'search-model': './../models/search-model.js'
+        'search-model': './../models/search-model.js',
+        'gallery-model': './../models/gallery-model.js'
     },
 });
 

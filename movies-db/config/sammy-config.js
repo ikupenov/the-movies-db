@@ -1,9 +1,10 @@
 import Sammy from 'sammy';
+import htmlHandler from 'html-handler';
+
 import accountController from 'account-controller';
 import searchController from 'search-controller';
 import headerController from 'header-controller';
-
-import htmlHandler from 'html-handler';
+import galleryController from 'gallery-controller';
 
 const engine = (function () {
     function start() {
@@ -29,8 +30,12 @@ const engine = (function () {
             this.post('#/account/sign-up', accountController.signUp);
             this.get('#/account/sign-out', accountController.signOut);
 
-            this.get('#/movies/search/title', searchController.search);
+            // this.get('#/movies/search/title', searchController.search);
 
+            this.get('#/movies/detailed/:id', galleryController.loadDetailedMoviePage);
+            this.get('#/movies/search/title', galleryController.loadFoundMoviesPage);
+
+            // Rest
             this.get(/^((?!unlist).)*$/, () => {
                 htmlHandler.setHtml('404-page');
             });
