@@ -67,3 +67,7 @@
 .movie-container .movie-caption-container h2, p {
     text-shadow: 1px 1px #000;
 }
+
+.jumbotron {
+    background: url('./../../assets/img/bg_pattern.jpg')
+}
