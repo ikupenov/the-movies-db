@@ -72,7 +72,7 @@ class AccountController {
             }).then(() => {
                 return new Promise((resolve, _) => {
                     setTimeout(() => {
-                        sammy.redirect('#/account/sign-in');
+                        sammy.redirect('#/home');
                         loadingScreen.stop();
                         resolve();
                     }, 750);
