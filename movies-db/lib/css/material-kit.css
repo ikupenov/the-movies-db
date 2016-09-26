@@ -241,72 +241,12 @@ a .material-icons, a:hover .material-icons, a:focus .material-icons {
 .navbar .navbar-nav > li > a.btn.btn-primary {
   box-shadow: 0 2px 2px 0 rgba(156, 39, 176, 0.14), 0 3px 1px -2px rgba(156, 39, 176, 0.2), 0 1px 5px 0 rgba(156, 39, 176, 0.12);
 }
-.btn.btn-primary, .btn.btn-primary:hover, .btn.btn-primary:focus, .btn.btn-primary:active, .btn.btn-primary.active, .btn.btn-primary:active:focus, .btn.btn-primary:active:hover, .btn.btn-primary.active:focus, .btn.btn-primary.active:hover, .open > .btn.btn-primary.dropdown-toggle, .open > .btn.btn-primary.dropdown-toggle:focus, .open > .btn.btn-primary.dropdown-toggle:hover,
-.navbar .navbar-nav > li > a.btn.btn-primary,
-.navbar .navbar-nav > li > a.btn.btn-primary:hover,
-.navbar .navbar-nav > li > a.btn.btn-primary:focus,
-.navbar .navbar-nav > li > a.btn.btn-primary:active,
-.navbar .navbar-nav > li > a.btn.btn-primary.active,
-.navbar .navbar-nav > li > a.btn.btn-primary:active:focus,
-.navbar .navbar-nav > li > a.btn.btn-primary:active:hover,
-.navbar .navbar-nav > li > a.btn.btn-primary.active:focus,
-.navbar .navbar-nav > li > a.btn.btn-primary.active:hover, .open >
-.navbar .navbar-nav > li > a.btn.btn-primary.dropdown-toggle, .open >
-.navbar .navbar-nav > li > a.btn.btn-primary.dropdown-toggle:focus, .open >
-.navbar .navbar-nav > li > a.btn.btn-primary.dropdown-toggle:hover {
-  background-color: #9c27b0;
-  color: #FFFFFF;
-}
-.btn.btn-primary:focus, .btn.btn-primary:active, .btn.btn-primary:hover,
-.navbar .navbar-nav > li > a.btn.btn-primary:focus,
-.navbar .navbar-nav > li > a.btn.btn-primary:active,
-.navbar .navbar-nav > li > a.btn.btn-primary:hover {
-  box-shadow: 0 14px 26px -12px rgba(156, 39, 176, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(156, 39, 176, 0.2);
-}
-.btn.btn-primary.disabled, .btn.btn-primary.disabled:hover, .btn.btn-primary.disabled:focus, .btn.btn-primary.disabled.focus, .btn.btn-primary.disabled:active, .btn.btn-primary.disabled.active, .btn.btn-primary:disabled, .btn.btn-primary:disabled:hover, .btn.btn-primary:disabled:focus, .btn.btn-primary:disabled.focus, .btn.btn-primary:disabled:active, .btn.btn-primary:disabled.active, .btn.btn-primary[disabled], .btn.btn-primary[disabled]:hover, .btn.btn-primary[disabled]:focus, .btn.btn-primary[disabled].focus, .btn.btn-primary[disabled]:active, .btn.btn-primary[disabled].active, fieldset[disabled] .btn.btn-primary, fieldset[disabled] .btn.btn-primary:hover, fieldset[disabled] .btn.btn-primary:focus, fieldset[disabled] .btn.btn-primary.focus, fieldset[disabled] .btn.btn-primary:active, fieldset[disabled] .btn.btn-primary.active,
-.navbar .navbar-nav > li > a.btn.btn-primary.disabled,
-.navbar .navbar-nav > li > a.btn.btn-primary.disabled:hover,
-.navbar .navbar-nav > li > a.btn.btn-primary.disabled:focus,
-.navbar .navbar-nav > li > a.btn.btn-primary.disabled.focus,
-.navbar .navbar-nav > li > a.btn.btn-primary.disabled:active,
-.navbar .navbar-nav > li > a.btn.btn-primary.disabled.active,
-.navbar .navbar-nav > li > a.btn.btn-primary:disabled,
-.navbar .navbar-nav > li > a.btn.btn-primary:disabled:hover,
-.navbar .navbar-nav > li > a.btn.btn-primary:disabled:focus,
-.navbar .navbar-nav > li > a.btn.btn-primary:disabled.focus,
-.navbar .navbar-nav > li > a.btn.btn-primary:disabled:active,
-.navbar .navbar-nav > li > a.btn.btn-primary:disabled.active,
-.navbar .navbar-nav > li > a.btn.btn-primary[disabled],
-.navbar .navbar-nav > li > a.btn.btn-primary[disabled]:hover,
-.navbar .navbar-nav > li > a.btn.btn-primary[disabled]:focus,
-.navbar .navbar-nav > li > a.btn.btn-primary[disabled].focus,
-.navbar .navbar-nav > li > a.btn.btn-primary[disabled]:active,
-.navbar .navbar-nav > li > a.btn.btn-primary[disabled].active, fieldset[disabled]
-.navbar .navbar-nav > li > a.btn.btn-primary, fieldset[disabled]
-.navbar .navbar-nav > li > a.btn.btn-primary:hover, fieldset[disabled]
-.navbar .navbar-nav > li > a.btn.btn-primary:focus, fieldset[disabled]
-.navbar .navbar-nav > li > a.btn.btn-primary.focus, fieldset[disabled]
-.navbar .navbar-nav > li > a.btn.btn-primary:active, fieldset[disabled]
-.navbar .navbar-nav > li > a.btn.btn-primary.active {
-  box-shadow: none;
-}
-.btn.btn-primary.btn-simple,
-.navbar .navbar-nav > li > a.btn.btn-primary.btn-simple {
-  background-color: transparent;
-  color: #9c27b0;
-  box-shadow: none;
-}
-.btn.btn-primary.btn-simple:hover, .btn.btn-primary.btn-simple:focus, .btn.btn-primary.btn-simple:active,
-.navbar .navbar-nav > li > a.btn.btn-primary.btn-simple:hover,
-.navbar .navbar-nav > li > a.btn.btn-primary.btn-simple:focus,
-.navbar .navbar-nav > li > a.btn.btn-primary.btn-simple:active {
-  background-color: transparent;
-  color: #9c27b0;
-}
+
 .btn.btn-info,
 .navbar .navbar-nav > li > a.btn.btn-info {
   box-shadow: 0 2px 2px 0 rgba(3, 169, 244, 0.14), 0 3px 1px -2px rgba(3, 169, 244, 0.2), 0 1px 5px 0 rgba(3, 169, 244, 0.12);
 }
+
 .btn.btn-info, .btn.btn-info:hover, .btn.btn-info:focus, .btn.btn-info:active, .btn.btn-info.active, .btn.btn-info:active:focus, .btn.btn-info:active:hover, .btn.btn-info.active:focus, .btn.btn-info.active:hover, .open > .btn.btn-info.dropdown-toggle, .open > .btn.btn-info.dropdown-toggle:focus, .open > .btn.btn-info.dropdown-toggle:hover,
 .navbar .navbar-nav > li > a.btn.btn-info,
 .navbar .navbar-nav > li > a.btn.btn-info:hover,
@@ -356,6 +296,7 @@ a .material-icons, a:hover .material-icons, a:focus .material-icons {
 .navbar .navbar-nav > li > a.btn.btn-info.active {
   box-shadow: none;
 }
+
 .btn.btn-info.btn-simple,
 .navbar .navbar-nav > li > a.btn.btn-info.btn-simple {
   background-color: transparent;

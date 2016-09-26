@@ -2,7 +2,6 @@ import Sammy from 'sammy';
 import htmlHandler from 'html-handler';
 
 import accountController from 'account-controller';
-import searchController from 'search-controller';
 import headerController from 'header-controller';
 import galleryController from 'gallery-controller';
 
@@ -46,8 +45,8 @@ const engine = (function () {
             this.get('#/movies/now-playing', galleryController.redirectToNowPlayingMoviesPage);
             this.get('#/movies/now-playing/:page', galleryController.loadNowPlayingMoviesPage);
             
-            // Rest
-            this.get(/^((?!unlist).)*$/, () => {
+            // Rest (except...)
+            this.get(/^((?!unlist|carousel-generic).)*$/, () => {
                 htmlHandler.setHtml('404-page');
             });
         });

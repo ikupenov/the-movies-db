@@ -28,7 +28,6 @@ SystemJS.config({
         'template-handler': './../views/helpers/template-handler.js',
 
         'account-controller': './../controllers/account-controller.js',
-        'search-controller': './../controllers/search-controller.js',
         'header-controller': './../controllers/header-controller.js',
         'gallery-controller': './../controllers/gallery-controller.js',
 
