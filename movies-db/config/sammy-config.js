@@ -8,17 +8,10 @@ import galleryController from 'gallery-controller';
 const engine = (function () {
     function start() {
         const sammy = Sammy(function () {
-            this.before({}, () => {
-                headerController.updateHeader();
-            });
+            this.before({}, () => headerController.updateHeader());
 
-            this.get('#/', function () {
-                this.redirect('#/home');
-            });
-
-            this.get('#/home', () => {
-                htmlHandler.setHtml('home', '#content');
-            });
+            this.get('#/', (sammy) => sammy.redirect('#/home'));
+            this.get('#/home', () => htmlHandler.setHtml('home', '#content'));
 
             // Account 
             this.get('#/account', accountController.load);
@@ -44,7 +37,7 @@ const engine = (function () {
 
             this.get('#/movies/now-playing', galleryController.redirectToNowPlayingMoviesPage);
             this.get('#/movies/now-playing/:page', galleryController.loadNowPlayingMoviesPage);
-            
+
             // Rest (except...)
             this.get(/^((?!unlist|carousel-generic).)*$/, () => {
                 htmlHandler.setHtml('404-page');
