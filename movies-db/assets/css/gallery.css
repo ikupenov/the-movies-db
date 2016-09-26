@@ -60,8 +60,10 @@
     font-size: 2rem;
 }
 
+.movie-container .movie-caption-container h2 {
+    font-size: 3rem;
+}
+
 .movie-container .movie-caption-container h2, p {
     text-shadow: 1px 1px #000;
 }
-
-.movie-container .movie-caption-container h2 {}
