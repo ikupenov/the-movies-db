@@ -109,8 +109,6 @@ class AccountController {
                 console.log(message);
             });
     }
-
-
 }
 
 const accountController = new AccountController();
