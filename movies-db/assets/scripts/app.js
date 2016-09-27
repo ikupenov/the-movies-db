@@ -20,13 +20,6 @@ $(document).ready(function () {
         }
     });
 
-    let child = firebaseDb.getChild('users').update({
-        name: 'gosho'
-    });
-    // child.on('value', user => {
-    //     console.log(user.val());
-    // });
-
     $(window).scroll(() => {
         if ($(this).scrollTop() >= 50) {
             $('#return-to-top').fadeIn(200);

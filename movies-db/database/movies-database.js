@@ -86,23 +86,3 @@ const moviesDb = (function () {
 } ());
 
 export default moviesDb;
-
-
-// Example
-//-------------------------
-
-// moviesDb.searchMoviesByTitle('up')
-//     .then(movies => moviesDb.getMovieDetails(movies.results[0].id))
-//     .then(movieInfo => moviesDb.getMovieVideos(movieInfo.id))
-//     .then(movieVideo => {
-//         const VIDEO_KEY = movieVideo.results[0].key;
-
-//         let div = $('<div id="frame-wrapper"/>');
-//         div.css('text-align', 'center');
-
-//         let iFrame = $(`<iframe width="1300" height="720" src="https://www.youtube.com/embed/${VIDEO_KEY}?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>`);
-
-//         div.append(iFrame);
-
-//         $('body').prepend(div);
-//     });

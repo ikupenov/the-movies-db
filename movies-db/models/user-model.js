@@ -21,10 +21,6 @@ class UserModel {
         return firebaseDb.signOut()
             .catch(error => Promise.reject(error));
     }
-
-    addToWatchlist(movieId) {
-        
-    }
 }
 
 const userModel = new UserModel();
