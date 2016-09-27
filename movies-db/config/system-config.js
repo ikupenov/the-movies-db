@@ -7,7 +7,7 @@ SystemJS.config({
         'systemjs-babel-build': './../lib/scripts/systemjs-babel-plugin/systemjs-babel-browser.js',
 
         'main': './../assets/scripts/app.js',
-        'engine': './../config/sammy-config.js',
+        'router': './../config/sammy-config.js',
         'loading-screen': './../assets/scripts/loading-screen.js',
 
         'sammy': './../lib/scripts/sammy.js',

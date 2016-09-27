@@ -1,21 +1,20 @@
 /// <reference path="../../typings/index.d.ts" />
 
 import 'jquery';
-import engine from 'engine';
 import loadingScreen from 'loading-screen';
-
-import htmlHandler from './../../views/helpers/html-handler.js';
+import router from 'router';
+import firebaseDb from 'firebase-database';
+import htmlHandler from 'html-handler';
 
 $(document).ready(function () {
-    engine.start();
+    router.start();
 
-    // TODO: Check if logged in
     htmlHandler.setHtml('header', '#header');
     htmlHandler.setHtml('footer', '#footer');
 
-    setTimeout(() => {
-        loadingScreen.stop();
-    }, 1000);
+    let user = firebaseDb.getCurrentUser();
+
+    console.log(user);
 
     $(window).scroll(() => {
         if ($(this).scrollTop() >= 50) {
@@ -30,4 +29,8 @@ $(document).ready(function () {
             scrollTop: 0
         }, 500);
     });
+
+    setTimeout(() => {
+        loadingScreen.stop();
+    }, 1000);
 });

@@ -26,7 +26,10 @@ const firebaseDb = (function () {
     }
 
     function getCurrentUser() {
-        return auth.currentUser;
+        let user = {};
+        auth.onAuthStateChanged(userInfo => user.userInfo = userInfo);
+
+        return user;
     }
 
     function onAuthStateChanged(callback) {

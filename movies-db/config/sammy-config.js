@@ -5,7 +5,7 @@ import accountController from 'account-controller';
 import headerController from 'header-controller';
 import galleryController from 'gallery-controller';
 
-const engine = (function () {
+const router = (function () {
     function start() {
         const sammy = Sammy(function () {
             this.before({}, () => headerController.updateHeader());
@@ -53,4 +53,4 @@ const engine = (function () {
     };
 } ());
 
-export default engine;
+export default router;
