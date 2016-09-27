@@ -25,9 +25,6 @@ class AccountController {
     }
 
     signIn(sammy) {
-        // TODO: Validate input
-
-        // let username = sammy.params.username;
         let email = sammy.params.email;
         let password = sammy.params.password;
 
@@ -36,7 +33,7 @@ class AccountController {
             .then(() => {
                 loadingScreen.start();
             }).then(() => {
-                return new Promise((resolve, reject) => {
+                return new Promise((resolve, _) => {
                     setTimeout(() => {
                         sammy.redirect('#/');
                         loadingScreen.stop();
@@ -58,8 +55,6 @@ class AccountController {
     }
 
     signUp(sammy) {
-        // TODO: Validate input
-
         let username = sammy.params.username;
         let email = sammy.params.email;
         let password = sammy.params.password;

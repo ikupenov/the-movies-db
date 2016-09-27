@@ -12,9 +12,20 @@ $(document).ready(function () {
     htmlHandler.setHtml('header', '#header');
     htmlHandler.setHtml('footer', '#footer');
 
-    let user = firebaseDb.getCurrentUser();
+    firebaseDb.onAuthStateChanged(user => {
+        if (user) {
+            localStorage.setItem('userUid', user.uid);
+        } else {
+            localStorage.setItem('userUid', null);
+        }
+    });
 
-    console.log(user);
+    let child = firebaseDb.getChild('users').update({
+        name: 'gosho'
+    });
+    // child.on('value', user => {
+    //     console.log(user.val());
+    // });
 
     $(window).scroll(() => {
         if ($(this).scrollTop() >= 50) {

@@ -7,6 +7,10 @@ const firebaseDb = (function () {
     const database = firebaseModule.database;
     const auth = firebaseModule.auth;
 
+    function getChild(child) {
+        return database.child(child);
+    }
+
     function createUserWithEmail(email, password) {
         return auth.createUserWithEmailAndPassword(email, password)
             .catch(error => {
@@ -43,7 +47,9 @@ const firebaseDb = (function () {
         signInWithEmail,
         signOut,
         onAuthStateChanged,
-        getCurrentUser
+        getCurrentUser,
+
+        getChild
     };
 } ());
 
