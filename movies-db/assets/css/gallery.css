@@ -19,6 +19,7 @@
 }
 
 .movie-container {
+    border: 3px solid #000;
     position: relative;
     overflow: hidden;
     height: 37em;
@@ -66,4 +67,20 @@
 
 .movie-container .movie-caption-container h2, p {
     text-shadow: 1px 1px #000;
+}
+
+.movie-container .add-to-watchlist-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20%;
+    height: 8vh;
+    border-left: 2px solid black;
+    border-bottom: 2px solid black;
+    border-bottom-left-radius: 20px;
+    color: white;
+    text-shadow: 1px 1px #000;
+    background-color: black;
+    opacity: 0.8;
+    text-align: center;
 }

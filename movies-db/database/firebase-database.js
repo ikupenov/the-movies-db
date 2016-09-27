@@ -48,7 +48,6 @@ const firebaseDb = (function () {
         signOut,
         onAuthStateChanged,
         getCurrentUser,
-
         getChild
     };
 } ());

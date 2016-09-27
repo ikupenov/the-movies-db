@@ -50,6 +50,7 @@ class AccountController {
                 let $dangerMessageContainer = $('#danger-message-container');
                 $dangerMessageContainer.html(message);
 
+                // TODO: Add to error handler
                 console.log(`${code} - ${message}`);
             });
     }
@@ -82,6 +83,7 @@ class AccountController {
                 let $dangerMessageContainer = $('#danger-message-container');
                 $dangerMessageContainer.html(message);
 
+                // TODO: Add to error handler
                 console.log(`${code} - ${message}`);
             });
     }
@@ -103,9 +105,12 @@ class AccountController {
                 const code = error.code;
                 const message = error.message;
 
+                // TODO: Add to error handler
                 console.log(message);
             });
     }
+
+
 }
 
 const accountController = new AccountController();

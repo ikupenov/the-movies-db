@@ -15,13 +15,17 @@
 
                 {{#movies}}
                 <div class="col-md-6 col-lg-4 col-sm-6 col-xs-12 portfolio-item">
-                    <div class="movie-container">
+                    <div class="movie-container" movie-id="{{id}}">
                         <div class="img-container" style="background: url({{posterSrc}});" onclick="window.location='#/movies/detailed/{{id}}';"></div>
 
                         <div class="movie-caption-container">
                             <h2 class="movie-title">{{title}}</h2>
                             <br>
                             <p><em>{{description}}</em></p>
+                        </div>
+
+                        <div class="add-to-watchlist-container">
+                            <i class="material-icons" style="font-size: 5rem; ">add</i>
                         </div>                        
                     </div>
                 </div>         

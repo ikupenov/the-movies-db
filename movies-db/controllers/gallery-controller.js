@@ -41,8 +41,8 @@ class GalleryController {
                         return handlebarsObject;
                     }).then(handlebarsObject => {
                         templateHandler.setTemplate('movie-details', '#content', handlebarsObject);
+                        
                         window.scrollTo(0, 0);
-
                         setTimeout(() => {
                             loadingScreen.stop();
                         }, 500);
