@@ -38,10 +38,14 @@ const router = (function () {
             this.get('#/movies/now-playing', galleryController.redirectToNowPlayingMoviesPage);
             this.get('#/movies/now-playing/:page', galleryController.loadNowPlayingMoviesPage);
 
-            // Rest (except...)
-            this.get(/^((?!unlist|carousel-generic).)*$/, () => {
+            // Not found
+            this.notFound = (function() {
                 htmlHandler.setHtml('404-page');
             });
+
+            // this.get(/^((?!unlist|carousel-generic).)*$/, () => {
+            //     htmlHandler.setHtml('404-page');
+            // });
         });
         $(function () {
             sammy.run('#/');
