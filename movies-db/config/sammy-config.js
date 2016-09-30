@@ -38,6 +38,9 @@ const router = (function () {
             this.get('#/movies/now-playing', galleryController.redirectToNowPlayingMoviesPage);
             this.get('#/movies/now-playing/:page', galleryController.loadNowPlayingMoviesPage);
 
+            // About
+            this.get('#/about', () => htmlHandler.setHtml('about', '#content'));
+
             // Not found
             this.notFound = (function() {
                 htmlHandler.setHtml('404-page');
