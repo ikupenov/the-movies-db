@@ -119,8 +119,6 @@ class AccountController {
     removeFromWatchlist(sammy) {
         const movieId = sammy.params.id;
         userModel.removeFromWatchlist(movieId);
-
-        this.getWatchlist();
     }
 
     getWatchlist() {
