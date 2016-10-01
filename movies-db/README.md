@@ -52,7 +52,7 @@ Please define and implement the following assets in your project:
 - Use some kind of web data storage, one of the following is Ok
   - Your backend with Node.js, PHP, ASP.NET, Django, Ruby on Rails, Spring, etc...
   - Telerik Backend Services
-  - Parse
+  - Firebase
   - Microsoft Mobile App Services
 - Use some kind of local storage, one of the following is Ok:
   - `localStorage`
