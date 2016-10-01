@@ -14,8 +14,10 @@ $(document).ready(function () {
 
     firebaseDb.onAuthStateChanged(user => {
         if (user) {
+            localStorage.setItem('username', user.displayName);
             localStorage.setItem('userUid', user.uid);
         } else {
+            localStorage.setItem('username', null);
             localStorage.setItem('userUid', null);
         }
     });

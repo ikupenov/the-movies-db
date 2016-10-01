@@ -51,7 +51,6 @@ class AccountController {
                 let $dangerMessageContainer = $('#danger-message-container');
                 $dangerMessageContainer.html(message);
 
-                // TODO: Add to error handler
                 console.log(`${code} - ${message}`);
             });
     }
@@ -63,7 +62,7 @@ class AccountController {
         let passwordConfirm = sammy.params['password-confirm'];
 
         userModel
-            .signUp(email, password)
+            .signUp(email, password, username, passwordConfirm)
             .then(() => {
                 loadingScreen.start();
             }).then(() => {
@@ -84,7 +83,6 @@ class AccountController {
                 let $dangerMessageContainer = $('#danger-message-container');
                 $dangerMessageContainer.html(message);
 
-                // TODO: Add to error handler
                 console.log(`${code} - ${message}`);
             });
     }
@@ -106,7 +104,6 @@ class AccountController {
                 const code = error.code;
                 const message = error.message;
 
-                // TODO: Add to error handler
                 console.log(`${code} - ${message}`);
             });
     }
@@ -130,9 +127,7 @@ class AccountController {
             .then(handlebarsObject => {
                 window.scrollTo(0, 0);
                 templateHandler.setTemplate('gallery', '#content', handlebarsObject);
-                setTimeout(() => {
-                    loadingScreen.stop();
-                }, 500);
+                setTimeout(() => loadingScreen.stop(), 500);
             }).catch(error => {
                 let handlebarsObject = { heading: error.message }
                 templateHandler.setTemplate('404', '#content', handlebarsObject);

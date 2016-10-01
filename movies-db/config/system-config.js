@@ -9,6 +9,7 @@ SystemJS.config({
         'main': './../assets/scripts/app.js',
         'router': './../config/sammy-config.js',
         'loading-screen': './../assets/scripts/loading-screen.js',
+        'validator': './../models/helpers/vaidator.js',
 
         'sammy': './../lib/scripts/sammy.js',
         'jquery': './../lib/scripts/jquery.min.js',

@@ -10,18 +10,16 @@ const firebaseDb = (function () {
         return database.child(child);
     }
 
-    function createUserWithEmail(email, password) {
+    function createUserWithEmail(email, password, username) {
         return auth.createUserWithEmailAndPassword(email, password)
-            .catch(error => {
-                return Promise.reject(error);
-            });
+            .then(() => this.getCurrentUser())
+            .then(user => user.updateProfile({ displayName: username }))
+            .catch(error => Promise.reject(error));
     }
 
     function signInWithEmail(email, password) {
         return auth.signInWithEmailAndPassword(email, password)
-            .catch(error => {
-                return Promise.reject(error);
-            });
+            .catch(error => Promise.reject(error));
     }
 
     function signOut() {
@@ -29,10 +27,9 @@ const firebaseDb = (function () {
     }
 
     function getCurrentUser() {
-        let user = {};
-        auth.onAuthStateChanged(userInfo => user.userInfo = userInfo);
-
-        return user;
+        return new Promise(resolve => {
+            auth.onAuthStateChanged(userInfo => resolve(userInfo));
+        });
     }
 
     function onAuthStateChanged(callback) {
@@ -64,7 +61,7 @@ const firebaseDb = (function () {
             let watchlist = database.child('users').child(userId).child('watchlist');
             watchlist.once('value', data => {
                 if (!data.val()) {
-                    reject({ heading: 'Empty', message: 'The watchlist is empty' });
+                    reject({ heading: 'Empty', message: 'The watchlist is empty.' });
                     return;
                 }
 

@@ -3,18 +3,22 @@
 import firebaseDb from 'firebase-database';
 import moviesDb from 'movies-database';
 
+import validator from 'validator';
+
 class UserModel {
     signIn(email, password) {
-        // TODO: Validate Input
-
         return firebaseDb.signInWithEmail(email, password)
             .catch(error => Promise.reject(error));
     }
 
-    signUp(email, password) {
-        // TODO: Validate Input
+    signUp(email, password, username, passwordConfirm) {
+        try {
+            validator.validateSignUpForm(email, password, username, passwordConfirm);
+        } catch (error) {
+            return Promise.reject({ code: '500', message: error });
+        }
 
-        return firebaseDb.createUserWithEmail(email, password)
+        return firebaseDb.createUserWithEmail(email, password, username)
             .catch(error => Promise.reject(error));
     }
 
@@ -51,7 +55,8 @@ class UserModel {
 
     getWatchlistHandlebarsObject(movies) {
         return new Promise((resolve, reject) => {
-            let handlebarsObject = { movies: [], isWatchlist: true };
+            let username = localStorage.getItem('username');
+            let handlebarsObject = { movies: [], username, isWatchlist: true };
 
             movies.forEach(movie => {
                 let title = movie.original_title;
@@ -61,7 +66,7 @@ class UserModel {
                 let isWatchlist = true;
                 let isLoggedIn = localStorage.getItem('userUid') !== 'null' ? true : false;
 
-                handlebarsObject.movies.push({ title, id, description, posterSrc, isWatchlist, isLoggedIn });
+                handlebarsObject.movies.push({ title, id, description, posterSrc, isWatchlist, isLoggedIn, username });
             });
 
             if (!handlebarsObject.movies.length) {
