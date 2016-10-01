@@ -1,5 +1,9 @@
 /* globals Promise */
 
+<<<<<<< HEAD
+=======
+// Initializes the firebase database
+>>>>>>> 47a672abace39dc7b7d14b104c9898beffa33341
 import firebaseModule from 'firebase-config';
 
 const firebaseDb = (function () {
@@ -41,6 +45,7 @@ const firebaseDb = (function () {
         });
     }
 
+<<<<<<< HEAD
     function addToWatchlist(userId, movieId) {
         return new Promise(resolve => {
             let movieToAdd = database.child('users').child(userId).child('watchlist').child(movieId);
@@ -60,14 +65,9 @@ const firebaseDb = (function () {
     }
 
     function getUsersWatchlist(userId) {
-        return new Promise((resolve, reject) => {
+        return new Promise(resolve => {
             let watchlist = database.child('users').child(userId).child('watchlist');
             watchlist.once('value', data => {
-                if (!data.val()) {
-                    reject({ heading: 'Empty', message: 'The watchlist is empty' });
-                    return;
-                }
-
                 let dataKeys = Object.keys(data.val());
                 let moviesIds = [];
                 dataKeys.forEach(key => {
@@ -79,16 +79,22 @@ const firebaseDb = (function () {
         });
     }
 
+=======
+>>>>>>> 47a672abace39dc7b7d14b104c9898beffa33341
     return {
         createUserWithEmail,
         signInWithEmail,
         signOut,
         onAuthStateChanged,
         getCurrentUser,
+<<<<<<< HEAD
         getChild,
         addToWatchlist,
         removeFromWatchlist,
         getUsersWatchlist
+=======
+        getChild
+>>>>>>> 47a672abace39dc7b7d14b104c9898beffa33341
     };
 } ());
 

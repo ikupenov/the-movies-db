@@ -1,0 +1,68 @@
+<link rel="stylesheet" href="./../../assets/css/gallery.css">
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12">
+<<<<<<< HEAD
+            {{#if isWatchlist}}
+            <h1 class="page-header">Users
+                <small>Watchlist</small>
+            </h1>
+            {{else}}
+            <h1 class="page-header">Movies
+                <small>Genre</small>
+            </h1>
+            {{/if}}
+=======
+            <h1 class="page-header">Movies
+                <small>Genre</small>
+            </h1>
+>>>>>>> 47a672abace39dc7b7d14b104c9898beffa33341
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="row">
+
+                {{#movies}}
+                <div class="col-md-6 col-lg-4 col-sm-6 col-xs-12 portfolio-item">
+                    <div class="movie-container" movie-id="{{id}}">
+                        <div class="img-container" style="background: url({{posterSrc}});" onclick="window.location='#/movies/detailed/{{id}}';"></div>
+
+                        <div class="movie-caption-container">
+                            <h2 class="movie-title">{{title}}</h2>
+                            <br>
+                            <p><em>{{description}}</em></p>
+                        </div>
+
+<<<<<<< HEAD
+                        {{#if isWatchlist}}
+                        <div class="remove-from-watchlist-container">
+                            <form action="#/account/remove-from-watchlist/{{id}}" method="POST">
+                                <button class="remove-from-watchlist-btn">
+                                    <i class="material-icons" style="font-size: 5rem; ">clear</i>
+                                </button>
+                            </form>
+                        </div>    
+                        {{else}}
+                        <div class="add-to-watchlist-container">
+                            <form action="#/account/add-to-watchlist/{{id}}" method="POST">
+                                <button class="add-from-watchlist-btn">
+                                    <i class="material-icons" style="font-size: 5rem; ">add</i>
+                                </button>
+                            </form>
+                        </div>   
+                        {{/if}}             
+=======
+                        <!-- <div class="add-to-watchlist-container">
+                            <i class="material-icons" style="font-size: 5rem; ">add</i>
+                        </div> -->                       
+>>>>>>> 47a672abace39dc7b7d14b104c9898beffa33341
+                    </div>
+                </div>         
+                {{/movies}}
+
+        </div>
+    </div>
+</div>

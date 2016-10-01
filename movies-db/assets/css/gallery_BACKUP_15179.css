@@ -1,0 +1,106 @@
+* {
+    box-sizing: border-box;
+}
+
+.portfolio-item {
+    margin-bottom: 10px;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+.page-header {
+    font-size: 7rem;
+    -webkit-font-smoothing: antialiased;
+}
+
+.img-container {
+    height: 37em;
+    width: 100%;
+}
+
+.movie-container {
+    border: 3px solid #000;
+    position: relative;
+    overflow: hidden;
+    height: 37em;
+    cursor: pointer;
+    margin-right: 1em;
+}
+
+@media (max-width:550px) {
+    .movie-container {
+        height: 25em;
+    }    
+}
+
+.movie-caption-container {
+    border-top: 1px solid black;
+    box-sizing: border-box;
+    max-width: 100%;
+    position: relative;
+}
+
+.movie-caption-container::-webkit-scrollbar { 
+    display: none; 
+}
+
+.movie-container .movie-caption-container {
+    background: rgba(0,0,0,0.29);
+    background: -moz-linear-gradient(top, rgba(0,0,0,0.29) 0%, rgba(0,0,0,0.29) 0%, rgba(0,0,0,0.5) 27%, rgba(0,0,0,0.63) 51%, rgba(0,0,0,0.74) 65%, rgba(0,0,0,0.8) 72%, rgba(0,0,0,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(0,0,0,0.29)), color-stop(0%, rgba(0,0,0,0.29)), color-stop(27%, rgba(0,0,0,0.5)), color-stop(51%, rgba(0,0,0,0.63)), color-stop(65%, rgba(0,0,0,0.74)), color-stop(72%, rgba(0,0,0,0.8)), color-stop(100%, rgba(0,0,0,1)));
+    background: -webkit-linear-gradient(top, rgba(0,0,0,0.29) 0%, rgba(0,0,0,0.29) 0%, rgba(0,0,0,0.5) 27%, rgba(0,0,0,0.63) 51%, rgba(0,0,0,0.74) 65%, rgba(0,0,0,0.8) 72%, rgba(0,0,0,1) 100%);
+    background: -o-linear-gradient(top, rgba(0,0,0,0.29) 0%, rgba(0,0,0,0.29) 0%, rgba(0,0,0,0.5) 27%, rgba(0,0,0,0.63) 51%, rgba(0,0,0,0.74) 65%, rgba(0,0,0,0.8) 72%, rgba(0,0,0,1) 100%);
+    background: -ms-linear-gradient(top, rgba(0,0,0,0.29) 0%, rgba(0,0,0,0.29) 0%, rgba(0,0,0,0.5) 27%, rgba(0,0,0,0.63) 51%, rgba(0,0,0,0.74) 65%, rgba(0,0,0,0.8) 72%, rgba(0,0,0,1) 100%);
+    background: linear-gradient(to bottom, rgba(0,0,0,0.29) 0%, rgba(0,0,0,0.29) 0%, rgba(0,0,0,0.5) 27%, rgba(0,0,0,0.63) 51%, rgba(0,0,0,0.74) 65%, rgba(0,0,0,0.8) 72%, rgba(0,0,0,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000', GradientType=0 );   
+    
+    overflow-y: scroll;
+    color: white;
+    position: absolute;
+    bottom: 0;
+    height: 20vh;
+    font-size: 2rem;
+}
+
+.movie-container .movie-caption-container h2 {
+    font-size: 3rem;
+}
+
+.movie-container .movie-caption-container h2, p {
+    text-shadow: 1px 1px #000;
+}
+
+<<<<<<< HEAD
+.movie-container .add-to-watchlist-container,
+.movie-container .remove-from-watchlist-container {
+=======
+.movie-container .add-to-watchlist-container {
+>>>>>>> 47a672abace39dc7b7d14b104c9898beffa33341
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20%;
+    height: 8vh;
+    border-left: 2px solid black;
+    border-bottom: 2px solid black;
+    border-bottom-left-radius: 20px;
+    color: white;
+    text-shadow: 1px 1px #000;
+    background-color: black;
+    opacity: 0.8;
+    text-align: center;
+<<<<<<< HEAD
+}
+
+.movie-container .add-to-watchlist-container button,
+.movie-container .remove-from-watchlist-container button {
+    border: none;
+    background-color: transparent;
+}
+
+.movie-container .add-to-watchlist-container button:hover,
+.movie-container .remove-from-watchlist-container button:hover {
+    color: #A9A9A9;
+=======
+>>>>>>> 47a672abace39dc7b7d14b104c9898beffa33341
+}

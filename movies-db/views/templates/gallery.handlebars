@@ -30,23 +30,25 @@
                             <p><em>{{description}}</em></p>
                         </div>
 
-                        {{#if isWatchlist}}
-                        <div class="remove-from-watchlist-container">
-                            <form action="#/account/remove-from-watchlist/{{id}}" method="POST">
-                                <button class="remove-from-watchlist-btn">
-                                    <i class="material-icons" style="font-size: 5rem; ">clear</i>
-                                </button>
-                            </form>
-                        </div>    
-                        {{else}}
-                        <div class="add-to-watchlist-container">
-                            <form action="#/account/add-to-watchlist/{{id}}" method="POST">
-                                <button class="add-from-watchlist-btn">
-                                    <i class="material-icons" style="font-size: 5rem; ">add</i>
-                                </button>
-                            </form>
-                        </div>   
-                        {{/if}}             
+                        {{#if isLoggedIn}}
+                            {{#if isWatchlist}}
+                            <div class="remove-from-watchlist-container">
+                                <form action="#/account/remove-from-watchlist/{{id}}" method="POST">
+                                    <button class="remove-from-watchlist-btn">
+                                        <i class="material-icons" style="font-size: 5rem; ">clear</i>
+                                    </button>
+                                </form>
+                            </div>    
+                            {{else}}
+                            <div class="add-to-watchlist-container">
+                                <form action="#/account/add-to-watchlist/{{id}}" method="POST">
+                                    <button class="add-from-watchlist-btn">
+                                        <i class="material-icons" style="font-size: 5rem; ">add</i>
+                                    </button>
+                                </form>
+                            </div>   
+                            {{/if}}     
+                        {{/if}}        
                     </div>
                 </div>         
                 {{/movies}}

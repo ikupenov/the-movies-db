@@ -41,7 +41,7 @@ class GalleryController {
                         return handlebarsObject;
                     }).then(handlebarsObject => {
                         templateHandler.setTemplate('movie-details', '#content', handlebarsObject);
-                        
+
                         window.scrollTo(0, 0);
                         setTimeout(() => {
                             loadingScreen.stop();
@@ -58,7 +58,10 @@ class GalleryController {
             .then(handlebarsObject => {
                 window.scrollTo(0, 0);
                 templateHandler.setTemplate('gallery', '#content', handlebarsObject);
-            }).catch(console.log);
+            }).catch(error => {
+                let handlebarsObject = { heading: error };
+                templateHandler.setTemplate('404', '#content', handlebarsObject)
+            });
     }
 
     loadPopularMoviesPage(sammy) {

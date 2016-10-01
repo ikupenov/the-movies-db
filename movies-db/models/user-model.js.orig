@@ -1,7 +1,10 @@
 /* globals Promise */
 
 import firebaseDb from 'firebase-database';
+<<<<<<< HEAD
 import moviesDb from 'movies-database';
+=======
+>>>>>>> 47a672abace39dc7b7d14b104c9898beffa33341
 
 class UserModel {
     signIn(email, password) {
@@ -22,6 +25,7 @@ class UserModel {
         return firebaseDb.signOut()
             .catch(error => Promise.reject(error));
     }
+<<<<<<< HEAD
 
     addToWatchlist(movieId) {
         return new Promise(resolve => {
@@ -40,12 +44,11 @@ class UserModel {
     }
 
     getWatchlist() {
-        return new Promise((resolve, reject) => {
+        return new Promise(resolve => {
             const userId = localStorage.getItem('userUid');
             firebaseDb.getUsersWatchlist(userId)
                 .then(moviesIds => moviesDb.getMoviesDetails(moviesIds))
-                .then(moviesDetails => resolve(moviesDetails))
-                .catch(error => reject(error));
+                .then(moviesDetails => resolve(moviesDetails));
         });
     }
 
@@ -59,9 +62,8 @@ class UserModel {
                 let description = movie.overview;
                 let posterSrc = this._getImageUrl(movie.poster_path);
                 let isWatchlist = true;
-                let isLoggedIn = localStorage.getItem('userUid') !== 'null' ? true : false;
 
-                handlebarsObject.movies.push({ title, id, description, posterSrc, isWatchlist, isLoggedIn });
+                handlebarsObject.movies.push({ title, id, description, posterSrc, isWatchlist });
             });
 
             if (!handlebarsObject.movies.length) {
@@ -78,6 +80,8 @@ class UserModel {
 
         return imageUrl;
     }
+=======
+>>>>>>> 47a672abace39dc7b7d14b104c9898beffa33341
 }
 
 const userModel = new UserModel();

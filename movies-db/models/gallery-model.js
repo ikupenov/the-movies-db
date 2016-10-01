@@ -77,8 +77,9 @@ class GalleryModel {
                 let id = movie.id;
                 let description = movie.overview;
                 let posterSrc = this._getImageUrl(movie.poster_path);
+                let isLoggedIn = localStorage.getItem('userUid') !== 'null' ? true : false;
 
-                handlebarsObject.movies.push({ title, id, description, posterSrc });
+                handlebarsObject.movies.push({ title, id, description, posterSrc, isLoggedIn });
             });
 
             if (!handlebarsObject.movies.length) {

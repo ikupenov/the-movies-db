@@ -1,10 +1,17 @@
 /* globals Promise */
 
+<<<<<<< HEAD
 import userModel from 'user-model';
 
 import loadingScreen from 'loading-screen';
 import htmlHandler from 'html-handler';
 import templateHandler from 'template-handler';
+=======
+import loadingScreen from 'loading-screen';
+
+import htmlHandler from 'html-handler';
+import userModel from 'user-model';
+>>>>>>> 47a672abace39dc7b7d14b104c9898beffa33341
 
 class AccountController {
     load(sammy) {
@@ -34,7 +41,11 @@ class AccountController {
             .then(() => {
                 loadingScreen.start();
             }).then(() => {
+<<<<<<< HEAD
                 return new Promise(resolve => {
+=======
+                return new Promise((resolve, _) => {
+>>>>>>> 47a672abace39dc7b7d14b104c9898beffa33341
                     setTimeout(() => {
                         sammy.redirect('#/');
                         loadingScreen.stop();
@@ -67,7 +78,11 @@ class AccountController {
             .then(() => {
                 loadingScreen.start();
             }).then(() => {
+<<<<<<< HEAD
                 return new Promise(resolve => {
+=======
+                return new Promise((resolve, _) => {
+>>>>>>> 47a672abace39dc7b7d14b104c9898beffa33341
                     setTimeout(() => {
                         sammy.redirect('#/home');
                         loadingScreen.stop();
@@ -95,7 +110,11 @@ class AccountController {
             .then(() => {
                 loadingScreen.start();
             }).then(() => {
+<<<<<<< HEAD
                 return new Promise(resolve => {
+=======
+                return new Promise((resolve, _) => {
+>>>>>>> 47a672abace39dc7b7d14b104c9898beffa33341
                     setTimeout(() => {
                         sammy.redirect('#/');
                         loadingScreen.stop();
@@ -107,6 +126,7 @@ class AccountController {
                 const message = error.message;
 
                 // TODO: Add to error handler
+<<<<<<< HEAD
                 console.log(`${code} - ${message}`);
             });
     }
@@ -119,6 +139,8 @@ class AccountController {
     removeFromWatchlist(sammy) {
         const movieId = sammy.params.id;
         userModel.removeFromWatchlist(movieId);
+
+        this.getWatchlist();
     }
 
     getWatchlist() {
@@ -133,11 +155,13 @@ class AccountController {
                 setTimeout(() => {
                     loadingScreen.stop();
                 }, 500);
-            }).catch(error => {
-                let handlebarsObject = { heading: error.message }
-                templateHandler.setTemplate('404', '#content', handlebarsObject);
+            }).catch(console.log);
+    }
+=======
+                console.log(message);
             });
     }
+>>>>>>> 47a672abace39dc7b7d14b104c9898beffa33341
 }
 
 const accountController = new AccountController();
