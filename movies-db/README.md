@@ -7,4 +7,5 @@
 
 [Github repository](https://github.com/ilievv/TheMovies-Database)
 
+*****************************************
 **This project is licensed under MIT License**
