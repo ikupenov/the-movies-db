@@ -1,0 +1,63 @@
+<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700|Lato:400,100,300,700,900' rel='stylesheet'
+    type='text/css'>
+
+<link rel="stylesheet" href="./../lib/css/animate.css">
+<link rel="stylesheet" href="./../assets/css/contact.css">
+
+<div class="contact-container">
+    <div class="contact-box animated fadeInUp">
+        <div class="box-header">
+            <h2>Contact us</h2>
+        </div>
+        <form action="mailto:contact.themovies.db@gmail.com" method="POST" enctype="text/plain">
+            <label for="email">Please enter your e-mail for feedback</label>
+            <br/>
+            <input name="email" type="email" autofocus="autofocus" id="email">
+            <br/>
+            <label for="subject">Subject</label>
+            <br/>
+            <input name="subject" type = "subject" id="subject">
+            <br/>
+            <label for="message">Message</label>
+            <br/>
+            <textarea name="message" type = "message" id="message"></textarea>
+            <br/>
+            <input id="button" type="submit" value="Send message">
+            <br/><br/>
+            <label for="address">Address: 
+                </br>
+                Sofia, pl. Nezavisimost
+                </br>
+                </label>
+            <a href="https://www.google.bg/maps/place/42%C2%B041'51.7%22N+23%C2%B019'18.8%22E/@42.700302,23.3205482,16z/data=!4m5!3m4!1s0x0:0x0!8m2!3d42.6977!4d23.3219">
+            <img id="location-img" style="width:425px; height:200px">
+            </a>
+        </form>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<script>
+
+        let img = document.getElementById('location-img');
+
+        let latitude = 42.6977;
+        let longitude = 23.3219;
+
+        let imgUrl = `http://maps.googleapis.com/maps/api/staticmap?center=${latitude},${longitude}&zoom=15&size=425x200&sensor=false`;
+
+        img.src = imgUrl;
+
+	$(document).ready(function () {
+    	$('#logo').addClass('animated fadeInDown');
+    	$("input:text:visible:first").focus();
+	});
+	$('#username').focus(function() {
+		$('label[for="username"]').addClass('selected');
+	});
+	$('#username').blur(function() {
+		$('label[for="username"]').removeClass('selected');
+	});
+
+</script>
