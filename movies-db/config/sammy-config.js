@@ -44,11 +44,18 @@ const router = (function () {
             this.get('#/movies/now-playing/:page', galleryController.loadNowPlayingMoviesPage);
 
             // Other
+            this.get('#/contact', () => htmlHandler.setHtml('contact', '#content'));
             this.get('#/about', () => htmlHandler.setHtml('about', '#content'));
- +          this.get('#/contact', () => htmlHandler.setHtml('contact', '#content'));
+
+            this.post(/^((?!!mailto).)*$/, (sammy) => {
+                let subject = sammy.params.subject;
+                let message = sammy.params.message;
+
+                window.location.href = `mailto:contacts@themovies-db.com?subject=${subject}&body=${message}`;
+            });
 
             // Not found
-            this.notFound = (function() {
+            this.notFound = (function () {
                 htmlHandler.setHtml('404-page');
             });
         });

@@ -52,7 +52,7 @@
 	line-height: 2em;
 }
 
-.contact-container .contact-box input, textarea{
+.contact-container .contact-box input, textarea {
     width: 40%;
 	margin-bottom: 20px;
 	padding: 8px;
@@ -69,16 +69,6 @@
  
 #button:hover {
     color: black;
-}
-
-@media screen and (max-width: 720px) {
-	.contact-container .contact-box {
-		max-width: 100%;
-	}    
-
-	.contact-container .contact-box input {
-		width: 80%;
-	}	
 }
 
 .contact-container .contact-box input:focus {
@@ -119,9 +109,35 @@
 }
 
 .contact-container #logo {
-  -webkit-animation-duration: 1s;
+	animation-duration: 1s;
+  	-webkit-animation-duration: 1s;
 }
 
 .scontact-container .contact-box {
-  -webkit-animation-duration: 1s;
+	animation-duration: 1s;
+  	-webkit-animation-duration: 1s;
+}
+
+#map {
+	height: 20em; 
+	width: 50%; 
+	margin:0 auto;
+}
+
+@media screen and (max-width: 720px) {
+	.contact-container .contact-box input, textarea {
+		width: 80%;
+	}
+
+	.contact-container .contact-box {
+		max-width: 100%;
+	}    
+
+	.contact-container .contact-box input {
+		width: 80%;
+	}	
+
+	#map {
+		width: 80%; 
+	}
 }
