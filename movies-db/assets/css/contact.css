@@ -124,6 +124,10 @@
 	margin:0 auto;
 }
 
+#map * {
+	overflow: visible;
+}
+
 @media screen and (max-width: 720px) {
 	.contact-container .contact-box input, textarea {
 		width: 80%;
