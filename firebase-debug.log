@@ -3,11 +3,10 @@
 [debug] CLI Version:  3.0.7
 [debug] Platform:     linux
 [debug] Node Version: v6.7.0
-[debug] Time:         Sun Oct 02 2016 04:14:43 GMT+0300 (EEST)
+[debug] Time:         Sun Oct 02 2016 04:22:17 GMT+0300 (EEST)
 [debug] ----------------------------------------------------------------------
 [debug] 
 [debug] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase"]
 [debug] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/themovies-db 
 [debug] <<< HTTP RESPONSE 200
 [debug] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/themovies-db/tokens 
-[debug] <<< HTTP RESPONSE 200

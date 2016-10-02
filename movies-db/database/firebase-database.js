@@ -13,7 +13,11 @@ const firebaseDb = (function () {
     function createUserWithEmail(email, password, username) {
         return auth.createUserWithEmailAndPassword(email, password)
             .then(() => this.getCurrentUser())
-            .then(user => user.updateProfile({ displayName: username }))
+            .then(user => {
+                user.updateProfile({ displayName: username })
+                localStorage.setItem('username', username);
+                localStorage.setItem('userUid', user.uid);
+            })
             .catch(error => Promise.reject(error));
     }
 
