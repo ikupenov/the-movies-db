@@ -1,0 +1,127 @@
+.contact-container h1#title {
+	font-family: 'Roboto Slab', serif;
+	font-weight: 300;
+	font-size: 3.2em;
+	color: white;
+	text-shadow: 0 0 10px rgba(0,0,0,0.8);
+	margin: 0 auto;
+	padding-top: 180px;
+	max-width: 300px;
+	text-align: center;
+	position: relative;
+	top: 0px;
+}
+
+.contact-container h1#title span span {
+	font-weight: 400;
+}
+
+.contact-container h2 {
+	text-transform: uppercase;
+	color: #666;
+	font-weight: 400;
+	letter-spacing: 1px;
+	font-size: 1.4em;
+	line-height: 2.8em;
+}
+
+.contact-container .contact-box {
+    background: url('./../../assets/img/bg_pattern.jpg');
+	max-width: 80%;
+	margin: 0 auto;
+	position: relative;
+	top: 80px;
+	padding-bottom: 30px;
+	border-radius: 5px;
+	box-shadow: 0 5px 50px rgba(0,0,0,0.4);
+	text-align: center;
+}
+
+.contact-container .contact-box .box-header {
+    background: url('./../../assets/img/bg_pattern.jpg');
+	margin-top: 0;
+	border-radius: 5px 5px 0 0;
+}
+
+.contact-container .contact-box label {
+	font-weight: 700;
+	font-size: .8em;
+	color: #888;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	line-height: 2em;
+}
+
+.contact-container .contact-box input, textarea{
+    width: 40%;
+	margin-bottom: 20px;
+	padding: 8px;
+	border: 1px solid #ccc;
+	border-radius: 2px;
+    text-transform:none;
+	font-size: .9em;
+	color: #888;
+}
+
+ #message {
+    height: 35%;
+}
+ 
+#button:hover {
+    color: black;
+}
+
+@media screen and (max-width: 720px) {
+	.contact-container .contact-box {
+		max-width: 100%;
+	}    
+
+	.contact-container .contact-box input {
+		width: 80%;
+	}	
+}
+
+.contact-container .contact-box input:focus {
+	outline: none;
+	border-color: #665851;
+	transition: 0.5s;
+	color: #665851;
+}
+
+.contact-container .contact-box button {
+	margin-top: 0px;
+	border: 0;
+	border-radius: 2px;
+	color: white;
+	padding: 10px;
+	text-transform: uppercase;
+	font-weight: 400;
+	font-size: 0.7em;
+	letter-spacing: 1px;
+	background-color: #665851;
+	cursor:pointer;
+	outline: none;
+}
+
+.contact-container .contact-box button:hover {
+	opacity: 0.7;
+	transition: 0.5s;
+}
+
+.scontact-container .contact-box button:hover {
+	opacity: 0.7;
+	transition: 0.5s;
+}
+
+.contact-container .selected {
+	color: #665851!important;
+	transition: 0.5s;
+}
+
+.contact-container #logo {
+  -webkit-animation-duration: 1s;
+}
+
+.scontact-container .contact-box {
+  -webkit-animation-duration: 1s;
+}
