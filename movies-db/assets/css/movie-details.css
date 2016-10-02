@@ -18,6 +18,11 @@
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
 
+    -webkit-box-shadow: 0px 1px 20px 5px rgba(0,0,0,0.63);
+    -moz-box-shadow: 0px 1px 20px 5px rgba(0,0,0,0.63);
+    box-shadow: 0px 1px 20px 5px rgba(0,0,0,0.63);
+
+
     overflow: scroll;
 }
 .top-container::-webkit-scrollbar { 
@@ -99,15 +104,20 @@
     padding: 2em;
     font-size: 2rem;
     color: #CCCCCC;
-    border-left: 5px solid #ccc;
-    border-right: 5px solid #ccc;
-    border-bottom: 5px solid #ccc;
     background-color: black;
     background: url('./../img/content_bg.png');
     opacity: 1;
     min-height: 10rem;
     overflow: scroll;
     word-wrap: break-word;
+
+    border-left: 5px solid #ccc;
+    border-right: 5px solid #ccc;
+    border-bottom: 5px solid #ccc;
+
+    -webkit-box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.63);
+    -moz-box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.63);
+    box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.63);
 }
 .middle-container::-webkit-scrollbar { 
     display: none; 

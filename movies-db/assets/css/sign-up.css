@@ -40,7 +40,6 @@
 }
 
 .sign-in-container .login-box {
-	/*background-color: #fff;*/
     background: url('./../../assets/img/bg_pattern.jpg');
 	max-width: 80%;
 	margin: 0 auto;
@@ -53,7 +52,6 @@
 }
 
 .sign-in-container .login-box .box-header {
-	/*background-color: #fff;*/
     background: url('./../../assets/img/bg_pattern.jpg');
 	margin-top: 0;
 	border-radius: 5px 5px 0 0;
@@ -127,8 +125,10 @@
 
 .sign-in-container #logo {
   -webkit-animation-duration: 1s;
+  animation-duration: 1s;
 }
 
 .sign-in-container .login-box {
   -webkit-animation-duration: 1s;
+  animation-duration: 1s;
 }
