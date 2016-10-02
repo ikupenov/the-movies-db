@@ -32,23 +32,24 @@
 
                         {{#if isLoggedIn}}
                             {{#if isWatchlist}}
-                            <div class="remove-from-watchlist-container">
+                            <div class="remove-from-watchlist-container" movie-id="{{id}}">
                                 <form action="#/account/remove-from-watchlist/{{id}}" method="POST">
                                     <button class="remove-from-watchlist-btn">
-                                        <i class="material-icons" style="font-size: 5rem; ">clear</i>
+                                        <i class="material-icons" style="font-size: 5rem; ">bookmark</i>
                                     </button>
                                 </form>
-                            </div>    
+                            </div>  
                             {{else}}
-                            <div class="add-to-watchlist-container">
+                            <div class="add-to-watchlist-container" movie-id="{{id}}">
                                 <form action="#/account/add-to-watchlist/{{id}}" method="POST">
-                                    <button class="add-from-watchlist-btn">
-                                        <i class="material-icons" style="font-size: 5rem; ">add</i>
+                                    <button class="add-to-watchlist-btn">
+                                        <i class="material-icons" style="font-size: 5rem; ">bookmark_border</i>
                                     </button>
                                 </form>
                             </div>   
                             {{/if}}     
-                        {{/if}}        
+                        {{/if}}     
+                        
                     </div>
                 </div>         
                 {{/movies}}
@@ -56,3 +57,5 @@
         </div>
     </div>
 </div>
+
+<script src="./../../assets/scripts/gallery.js"></script>

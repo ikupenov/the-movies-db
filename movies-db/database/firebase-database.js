@@ -76,6 +76,12 @@ const firebaseDb = (function () {
         });
     }
 
+    function pushError(error) {
+        return new Promise(resolve => {
+            resolve(database.child('errors').push(error));
+        });
+    }
+
     return {
         createUserWithEmail,
         signInWithEmail,
@@ -85,7 +91,8 @@ const firebaseDb = (function () {
         getChild,
         addToWatchlist,
         removeFromWatchlist,
-        getUsersWatchlist
+        getUsersWatchlist,
+        pushError
     };
 } ());
 

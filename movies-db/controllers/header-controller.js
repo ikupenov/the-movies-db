@@ -1,6 +1,6 @@
-import templateHandler from 'template-handler';
-
 import firebaseDb from 'firebase-database';
+
+import templateHandler from 'template-handler';
 
 class HeaderController {
     updateHeader() {

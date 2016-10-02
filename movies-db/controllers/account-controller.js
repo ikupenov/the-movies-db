@@ -2,9 +2,10 @@
 
 import userModel from 'user-model';
 
-import loadingScreen from 'loading-screen';
 import htmlHandler from 'html-handler';
 import templateHandler from 'template-handler';
+import loadingScreen from 'loading-screen';
+import errorLogger from 'error-logger';
 
 class AccountController {
     load(sammy) {
@@ -51,7 +52,7 @@ class AccountController {
                 let $dangerMessageContainer = $('#danger-message-container');
                 $dangerMessageContainer.html(message);
 
-                console.log(`${code} - ${message}`);
+                errorLogger.push(`${code} - ${message}`);
             });
     }
 
@@ -83,7 +84,7 @@ class AccountController {
                 let $dangerMessageContainer = $('#danger-message-container');
                 $dangerMessageContainer.html(message);
 
-                console.log(`${code} - ${message}`);
+                errorLogger.push(`${code} - ${message}`);
             });
     }
 
@@ -104,7 +105,7 @@ class AccountController {
                 const code = error.code;
                 const message = error.message;
 
-                console.log(`${code} - ${message}`);
+                errorLogger.push(`${code} - ${message}`);
             });
     }
 

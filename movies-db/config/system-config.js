@@ -10,6 +10,7 @@ SystemJS.config({
         'router': './../config/sammy-config.js',
         'loading-screen': './../assets/scripts/loading-screen.js',
         'validator': './../models/helpers/vaidator.js',
+        'error-logger': './../models/helpers/error-logger.js',
 
         'sammy': './../lib/scripts/sammy.js',
         'jquery': './../lib/scripts/jquery.min.js',

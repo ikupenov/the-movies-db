@@ -2,6 +2,7 @@ import loadingScreen from 'loading-screen';
 
 import galleryModel from 'gallery-model';
 import templateHandler from 'template-handler';
+import errorLogger from 'error-logger';
 
 class GalleryController {
     redirectToPopularMoviesPage(sammy) {
@@ -72,7 +73,7 @@ class GalleryController {
             .then(handlebarsObject => {
                 window.scrollTo(0, 0);
                 templateHandler.setTemplate('gallery', '#content', handlebarsObject);
-            }).catch(console.log);
+            }).catch(error => errorLogger.push(`${error}`));
     }
 
     loadTopRatedMoviesPage(sammy) {
@@ -94,7 +95,7 @@ class GalleryController {
             .then(handlebarsObject => {
                 window.scrollTo(0, 0);
                 templateHandler.setTemplate('gallery', '#content', handlebarsObject);
-            }).catch(console.log);
+            }).catch(error => errorLogger.push(`${error}`));
     }
 
     loadNowPlayingMoviesPage(sammy) {
@@ -105,7 +106,7 @@ class GalleryController {
             .then(handlebarsObject => {
                 window.scrollTo(0, 0);
                 templateHandler.setTemplate('gallery', '#content', handlebarsObject);
-            }).catch(console.log);
+            }).catch(error => errorLogger.push(`${error}`));
     }
 }
 
