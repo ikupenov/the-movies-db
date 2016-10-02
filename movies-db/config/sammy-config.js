@@ -45,6 +45,7 @@ const router = (function () {
 
             // Other
             this.get('#/about', () => htmlHandler.setHtml('about', '#content'));
+ +          this.get('#/contact', () => htmlHandler.setHtml('contact', '#content'));
 
             // Not found
             this.notFound = (function() {
