@@ -3,7 +3,7 @@
         let $container = $(`<div class="add-to-watchlist-container" movie-id="${movieId}"/>`);
         let $form = $(`<form action="#/account/add-to-watchlist/${movieId}" method="POST"/>`);
         let $addBtn = $('<button class="add-to-watchlist-btn"/>');
-        let $icon = $('<i class="material-icons" style="font-size: 5rem;"/>');
+        let $icon = $('<i class="material-icons" style="font-size: 6vh;"/>');
         $icon.html('bookmark_border');
 
         $addBtn.append($icon);
@@ -17,7 +17,7 @@
         let $container = $(`<div class="remove-from-watchlist-container" movie-id="${movieId}"/>`);
         let $form = $(`<form action="#/account/remove-from-watchlist/${movieId}" method="POST"/>`);
         let $removeBtn = $('<button class="remove-from-watchlist-btn"/>');
-        let $icon = $('<i class="material-icons" style="font-size: 5rem;"/>');
+        let $icon = $('<i class="material-icons" style="font-size: 6vh;"/>');
         $icon.html('bookmark');
 
         $removeBtn.append($icon);
