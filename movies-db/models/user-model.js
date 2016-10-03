@@ -4,9 +4,12 @@ import firebaseDb from 'firebase-database';
 import moviesDb from 'movies-database';
 
 import validator from 'validator';
+import encryptor from 'encryptor';
 
 class UserModel {
     signIn(email, password) {
+        password = encryptor.encrypt(password);
+        
         return firebaseDb.signInWithEmail(email, password)
             .catch(error => Promise.reject(error));
     }
@@ -17,6 +20,9 @@ class UserModel {
         } catch (error) {
             return Promise.reject({ code: '500', message: error });
         }
+
+        password = encryptor.encrypt(password);
+        passwordConfirm = encryptor.encrypt(passwordConfirm);
 
         return firebaseDb.createUserWithEmail(email, password, username)
             .catch(error => Promise.reject(error));

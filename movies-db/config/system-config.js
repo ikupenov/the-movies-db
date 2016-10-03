@@ -11,6 +11,7 @@ SystemJS.config({
         'loading-screen': './../assets/scripts/loading-screen.js',
         'validator': './../models/helpers/vaidator.js',
         'error-logger': './../models/helpers/error-logger.js',
+        'encryptor': './../assets/scripts/encryptor.js',
 
         'sammy': './../lib/scripts/sammy.js',
         'jquery': './../lib/scripts/jquery.min.js',
