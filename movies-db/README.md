@@ -3,7 +3,7 @@
 
 [Video preview](https://www.youtube.com/watch?v=t6Pgxk0oLw4&feature=youtu.be)
 
-[Telerik academy showcase](http://best.telerikacademy.com)
+[Telerik academy showcase](http://best.telerikacademy.com/projects/352/TheMovies-Database)
 
 [Github repository](https://github.com/ilievv/TheMovies-Database)
 
