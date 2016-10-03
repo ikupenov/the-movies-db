@@ -1,13 +1,13 @@
 import firebaseDb from 'firebase-database';
 
 const errorLogger = (function () {
-    function pushError(error) {
+    function push(error) {
         firebaseDb.pushError(error);
     }
 
     return {
-        pushError
-    }
+        push
+    };
 } ());
 
 export default errorLogger;

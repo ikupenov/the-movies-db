@@ -22,7 +22,7 @@ const validator = (function () {
 
     function validateEmail(email) {
         if (!PATTERNS.EMAIL_PATTERN.test(email)) {
-            throw MESSAGES.EMAIL.MESSAGES;
+            throw MESSAGES.INVALID_EMAIL_MESSAGES;
         }
     }
 

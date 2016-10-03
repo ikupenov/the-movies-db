@@ -14,7 +14,7 @@ const firebaseDb = (function () {
         return auth.createUserWithEmailAndPassword(email, password)
             .then(() => this.getCurrentUser())
             .then(user => {
-                user.updateProfile({ displayName: username })
+                user.updateProfile({ displayName: username });
                 localStorage.setItem('username', username);
                 localStorage.setItem('userUid', user.uid);
             })
@@ -82,7 +82,8 @@ const firebaseDb = (function () {
 
     function pushError(error) {
         return new Promise(resolve => {
-            resolve(database.child('errors').push(error));
+            let errors = database.child('errors');
+            // resolve(errors.push(error));
         });
     }
 
@@ -99,5 +100,7 @@ const firebaseDb = (function () {
         pushError
     };
 } ());
+
+firebaseDb.pushError(1);
 
 export default firebaseDb;
