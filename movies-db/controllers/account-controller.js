@@ -123,14 +123,14 @@ class AccountController {
         userModel.getWatchlist()
             .then(moviesDetails => {
                 loadingScreen.start();
-                return userModel.getWatchlistHandlebarsObject(moviesDetails)
+                return userModel.getWatchlistHandlebarsObject(moviesDetails);
             })
             .then(handlebarsObject => {
                 window.scrollTo(0, 0);
                 templateHandler.setTemplate('gallery', '#content', handlebarsObject);
                 setTimeout(() => loadingScreen.stop(), 500);
             }).catch(error => {
-                let handlebarsObject = { heading: error.message }
+                let handlebarsObject = { heading: error.message };
                 templateHandler.setTemplate('404', '#content', handlebarsObject);
             });
     }
