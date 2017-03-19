@@ -1,15 +1,6 @@
 ### Team "Nightwing"
 *****************************************
 
-###:mortar_board:Team Members
-|       Name        |      Telerik Academy Username    |
-|:-----------------:|:--------------------------------:|
-| Илиян Купенов   |           Ilian_Iliev_2               |
-| Светлин Кожухаров|           svetlin.kozhuharov                | 
-| Мариян Илиев    |           Mariyan_Iliev_2              | 
-| Михаела Иванова     |           Mihaela_Ivanova                  | 
-| Ивелин Ралев   |           IvelinR               |
-
 # JavaScript Applications: Teamwork Assignment
 *****************************************
 
